@@ -32,17 +32,12 @@ void setup()
 
 void loop()
 {
-  delay(dht.getMinimumSamplingPeriod());
+  delay(15000); // taxa de amostragem minima thingspeak
 
   float humidity = dht.getHumidity();
   float temperature = dht.getTemperature();
 
-  Serial.print(dht.getStatusString());
-  Serial.print("\t");
-  Serial.print(humidity, 1);
-  Serial.print("\t\t");
-  Serial.print(temperature, 1);
-  Serial.print("\t\t");
-  Serial.println(dht.toFahrenheit(temperature), 1);
+  Serial.print(temperature);
+  Serial.print(" ");
+  Serial.println(humidity);
 }
-
